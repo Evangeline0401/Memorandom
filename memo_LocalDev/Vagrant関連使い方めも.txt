@@ -1,0 +1,27 @@
+＝＝ローカル開発環境の構築についてメモする＝＝
+＜必要なもの＞
+　・VirtualBox
+　・Vagrant
+　　　これはVirtualBoxを簡単に使うためのモノらしい
+　・Cyberduck
+＜構築の流れ＞
+　・適当にworkspaceフォルダを作成
+　　　Vagrant関連の作業はこのフォルダ内で行う
+　・workspace内に適当な名前でフォルダを作成し、そこに移動
+　・その後以下のコマンドを実施
+　　　# 仮想マシン設定用のVagrantfileを作る
+　　　　vagrant init bento/centos-6.8
+　　　# Vagrantfileを編集して仮想マシンのIPアドレスを192.168.33.10にする
+　　　　sed -i '' -e 's/# config.vm.network "private_network", ip: "192.168.33.10"/config.vm.network "private_network", ip: "192.168.33.10"/' Vagrantfile
+　　　# 仮想マシンを起動する（少し時間かかります）
+　　　　vagrant up（マシンの停止をするときはvagrant halt）
+　　　# 仮想マシンの状態を確認する
+　　　　vagrant status
+　・Vagrantfileのあるフォルダで「vagrant ssh」
+　　　立ち上げたサーバにログインができる
+　　　「sudo yum -y update」でOSを最新状態にアプデ
+　　　必要なアプリケーション (Pythonなど) をこのときにインストール
+　・Cyberduckでファイル等を簡単に挙げられるようにする
+　　　プロトコルをSFTPに
+　　　サーバorホストには設定したIPを設定
+　　　ユーザおよびパスワードに「vagrant」と入れて接続
