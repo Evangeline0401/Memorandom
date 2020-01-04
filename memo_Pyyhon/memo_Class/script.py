@@ -1,3 +1,5 @@
+#Classについてのチュートリアル
+
 from menu_item import MenuItem
 
 # ここでインスタンスの作成
