@@ -1,0 +1,10 @@
+・pipでインストールしたものは以下のフォルダに保存される
+　　/usr/local/lib/python3.7/site-packages
+・Pythonでimportで呼び出しにいくのは以下のフォルダ
+　　/Users/shimano/Library/Python/3.7/lib/python/site-packages
+
+・パスについて
+　　/usr/local...にパスを通すと仮想環境に影響するので通さないことにした
+　　ローカル環境でインストールをしたら/usr/local... から/Users/shimano...にファイルをコピーするで暫定対処
+
+・今後の開発についてはなるべくpyenv-virtualenvの仮想環境を活用すること
